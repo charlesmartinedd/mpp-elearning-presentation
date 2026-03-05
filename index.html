@@ -494,6 +494,29 @@
   .nextsteps-item strong {
     color:var(--navy); font-weight:700;
   }
+  .nextsteps-discussion {
+    width:100%; margin-top:24px;
+    background:var(--navy);
+    border-radius:12px; padding:20px 28px;
+  }
+  .nextsteps-discussion-title {
+    font-size:13px; font-weight:700; letter-spacing:2px;
+    text-transform:uppercase; color:var(--gold);
+    margin-bottom:14px;
+  }
+  .nextsteps-discussion-items {
+    display:flex; gap:24px;
+  }
+  .nextsteps-discussion-item {
+    flex:1; display:flex; align-items:flex-start; gap:12px;
+    font-size:15px; color:rgba(255,255,255,0.85); line-height:1.5;
+  }
+  .discussion-badge {
+    flex-shrink:0; background:linear-gradient(135deg, var(--gold), var(--gold-light));
+    color:var(--navy); font-size:10px; font-weight:700;
+    padding:4px 10px; border-radius:4px;
+    letter-spacing:1px; white-space:nowrap; margin-top:2px;
+  }
 
   /* === SLIDE 12: DEMO === */
   .slide-demo {
@@ -902,6 +925,19 @@
             <div class="nextsteps-item"><strong>Now:</strong> PM Review &amp; feedback collection</div>
             <div class="nextsteps-item"><strong>Next:</strong> Pilot testing with select group</div>
             <div class="nextsteps-item"><strong>Target:</strong> Full deployment to all Program Managers</div>
+          </div>
+        </div>
+      </div>
+      <div class="nextsteps-discussion anim fade-up" style="animation-delay:1.2s">
+        <div class="nextsteps-discussion-title">Discussion Points</div>
+        <div class="nextsteps-discussion-items">
+          <div class="nextsteps-discussion-item">
+            <div class="discussion-badge">MOVE AMERICA</div>
+            <span>Standalone course adaptation for Move America &mdash; scope, timeline, and target audience</span>
+          </div>
+          <div class="nextsteps-discussion-item">
+            <div class="discussion-badge">BRANDING</div>
+            <span>Department of Defense &rarr; Department of War transition &mdash; content updates across all modules, SOP references, and video narration</span>
           </div>
         </div>
       </div>
