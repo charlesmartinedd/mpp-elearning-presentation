@@ -204,7 +204,7 @@
     display:flex; align-items:center; gap:36px;
   }
   .slide2-image {
-    flex:0 0 42%;
+    flex:0 0 50%;
   }
   .slide2-image img {
     width:100%; border-radius:10px;
@@ -286,6 +286,10 @@
     font-size:17px; color:var(--gray-600); font-style:italic;
     text-align:center;
     white-space:nowrap;
+  }
+  .pipeline-citation {
+    font-size:12px; color:var(--gray-600); text-align:center;
+    margin-top:8px; opacity:0.7; max-width:600px;
   }
 
   /* === SLIDES 4-8: DEEP DIVE === */
@@ -593,7 +597,8 @@
           <div class="pipeline-pill" id="pill-5">Summary</div>
         </div>
       </div>
-      <div class="pipeline-subtitle anim fade-in" style="animation-delay:2.0s"><em>Every module follows a proven instructional design framework</em></div>
+      <div class="pipeline-subtitle anim fade-in" style="animation-delay:2.0s"><em>Based on Gagn&eacute;&rsquo;s Nine Events of Instruction &mdash; the foundational framework for systematic instructional design</em></div>
+      <div class="pipeline-citation anim fade-in" style="animation-delay:2.4s">Gagn&eacute;, R. M., Wager, W. W., Golas, K. C., &amp; Keller, J. M. (2005). <em>Principles of Instructional Design</em> (5th ed.). Wadsworth/Thomson Learning.</div>
     </div>
   </div>
 
@@ -611,9 +616,13 @@
       <div class="deepdive-text">
         <div class="bullet-item anim slide-left" style="animation-delay:0.5s">
           <div class="bullet-dot"></div>
-          <span>AI-generated video narration introduces each lesson with context and tone</span>
+          <span>Each module opens with a branded landing page &mdash; module title, cover image, course description, and a clear &ldquo;Start Course&rdquo; entry point</span>
         </div>
         <div class="bullet-item anim slide-left" style="animation-delay:0.65s">
+          <div class="bullet-dot"></div>
+          <span>AI-generated video narration introduces each lesson with context and tone</span>
+        </div>
+        <div class="bullet-item anim slide-left" style="animation-delay:0.8s">
           <div class="bullet-dot"></div>
           <span>Professional production with DoW branding and 508 compliance</span>
         </div>
@@ -827,19 +836,16 @@
     // Deactivate current
     document.querySelector('.slide.active').classList.remove('active');
 
-    // Reset animations on target slide
+    // Reset animations on target slide by cloning each .anim element
     const targetSlide = document.querySelector('[data-slide="'+n+'"]');
     const anims = targetSlide.querySelectorAll('.anim');
     anims.forEach(function(el) {
-      el.style.animation = 'none';
-      el.offsetHeight;
+      var clone = el.cloneNode(true);
+      el.parentNode.replaceChild(clone, el);
     });
 
-    // Brief delay then activate to ensure staggered delays work
+    // Activate after brief delay
     setTimeout(function() {
-      anims.forEach(function(el) {
-        el.style.animation = '';
-      });
       targetSlide.classList.add('active');
     }, 50);
 
