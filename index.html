@@ -455,6 +455,16 @@
     margin-bottom:4px;
   }
 
+  /* === SLIDE 11: DEMO === */
+  .slide-demo {
+    background: var(--navy);
+    padding:0;
+  }
+  .demo-iframe {
+    width:100%; height:100%;
+    border:none;
+  }
+
   /* === SLIDE 10: CLOSING === */
   .slide-closing {
     background: radial-gradient(ellipse at 50% 40%, rgba(197,165,90,0.06) 0%, transparent 60%),
@@ -525,8 +535,8 @@
   <!-- SLIDE 1: TITLE -->
   <div class="slide slide-title active" data-slide="1">
     <div class="title-logos anim fade-in" style="animation-delay:0.2s">
-      <img src="mpp-presentation-screenshots/dow-seal-crisp.png" alt="DoW Seal">
-      <img src="mpp-presentation-screenshots/mpp-logo-crisp.png" alt="MPP Logo">
+      <img loading="lazy" src="mpp-presentation-screenshots/dow-seal-crisp.png" alt="DoW Seal">
+      <img loading="lazy" src="mpp-presentation-screenshots/mpp-logo-crisp.png" alt="MPP Logo">
     </div>
     <div class="title-divider"></div>
     <div class="title-main anim fade-up" style="animation-delay:1.0s">DoW Mentor-Prot&eacute;g&eacute; Program</div>
@@ -541,7 +551,7 @@
     </div>
     <div class="slide2-body">
       <div class="slide2-image anim scale-in" style="animation-delay:0.2s">
-        <img src="mpp-presentation-screenshots/m1-00-landing.png" alt="Module 1 Landing">
+        <img loading="lazy" src="mpp-presentation-screenshots/m1-00-landing.png" alt="Module 1 Landing">
       </div>
       <div class="slide2-bullets">
         <div class="narrative-bullet anim slide-left" style="animation-delay:0.4s">
@@ -820,16 +830,21 @@
     <div class="closing-divider"></div>
     <div class="closing-subtitle anim fade-in" style="animation-delay:1.0s">Live demonstration of the full eLearning experience</div>
     <div class="closing-logos anim fade-up" style="animation-delay:1.3s">
-      <img src="mpp-presentation-screenshots/dow-seal-crisp.png" alt="DoW Seal">
-      <img src="mpp-presentation-screenshots/mpp-logo-crisp.png" alt="MPP Logo">
+      <img loading="lazy" src="mpp-presentation-screenshots/dow-seal-crisp.png" alt="DoW Seal">
+      <img loading="lazy" src="mpp-presentation-screenshots/mpp-logo-crisp.png" alt="MPP Logo">
     </div>
+  </div>
+
+  <!-- SLIDE 11: MODULE 1 LIVE DEMO -->
+  <div class="slide slide-demo" data-slide="11">
+    <iframe class="demo-iframe" src="https://mpp.srv1158960.hstgr.cloud/modules/module-01/" allowfullscreen></iframe>
   </div>
 
 </div>
 
 <script>
 (function(){
-  const totalSlides = 10;
+  const totalSlides = 11;
   let current = 1;
   let transitioning = false;
 
