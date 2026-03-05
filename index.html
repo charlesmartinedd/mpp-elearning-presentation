@@ -458,46 +458,41 @@
     margin-bottom:4px;
   }
 
-  /* === SLIDE 10: QUESTIONS === */
-  .slide-questions {
-    background: radial-gradient(ellipse at 50% 40%, rgba(197,165,90,0.06) 0%, transparent 60%),
-                linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
-    flex-direction:column; text-align:center;
+  /* === SLIDE 10: PILOT FEEDBACK & NEXT STEPS === */
+  .nextsteps-body {
+    flex:1; width:100%; max-width:1200px;
+    margin:0 auto; padding:32px 50px;
+    display:flex; align-items:center; justify-content:center;
   }
-  .questions-content {
-    display:flex; flex-direction:column; align-items:center;
-    gap:0; max-width:800px; padding:40px;
+  .nextsteps-columns {
+    display:flex; gap:32px; width:100%;
   }
-  .questions-icon {
-    margin-bottom:24px;
+  .nextsteps-col {
+    flex:1; background:var(--white);
+    border-radius:12px;
+    border:1px solid rgba(27,42,74,0.08);
+    box-shadow:0 4px 24px rgba(0,0,0,0.06);
+    padding:28px 24px;
+    display:flex; flex-direction:column; gap:20px;
   }
-  .questions-title {
-    font-size:clamp(32px,4.5vw,54px); font-weight:700;
-    color:var(--white); letter-spacing:-0.5px;
-    margin-bottom:16px;
+  .nextsteps-col-header {
+    display:flex; align-items:center; gap:12px;
+    padding-bottom:16px;
+    border-bottom:2px solid var(--gold);
   }
-  .questions-divider {
-    width:0; height:2px; background:var(--gold);
-    margin:0 auto 32px;
+  .nextsteps-col-header span {
+    font-size:18px; font-weight:700; color:var(--navy);
   }
-  .slide.active .questions-divider { animation: drawWidth 0.8s 0.8s cubic-bezier(0.4,0,0.2,1) forwards; }
-  .questions-prompts {
-    display:flex; flex-direction:column; gap:16px;
-    margin-bottom:48px;
+  .nextsteps-items {
+    display:flex; flex-direction:column; gap:14px;
   }
-  .questions-prompt {
-    font-size:clamp(16px,1.8vw,20px); color:rgba(255,255,255,0.75);
-    font-style:italic; line-height:1.5;
-    padding:12px 24px;
-    border-left:3px solid var(--gold);
-    text-align:left;
+  .nextsteps-item {
+    font-size:15px; color:var(--text-dark); line-height:1.55;
+    padding-left:16px;
+    border-left:3px solid rgba(197,165,90,0.3);
   }
-  .questions-logos {
-    display:flex; gap:32px; align-items:center;
-  }
-  .questions-logos img {
-    height:60px; width:auto; object-fit:contain;
-    opacity:0.7;
+  .nextsteps-item strong {
+    color:var(--navy); font-weight:700;
   }
 
   /* === SLIDE 12: DEMO === */
@@ -869,20 +864,46 @@
     </div>
   </div>
 
-  <!-- SLIDE 10: QUESTIONS & DISCUSSION -->
-  <div class="slide slide-questions" data-slide="10">
-    <div class="questions-content">
-      <div class="questions-icon anim fade-up" style="animation-delay:0.2s">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-          <circle cx="32" cy="32" r="30" stroke="var(--gold)" stroke-width="2" fill="none"/>
-          <text x="32" y="42" text-anchor="middle" font-size="36" font-weight="700" fill="var(--gold)">?</text>
-        </svg>
-      </div>
-      <div class="questions-title anim fade-up" style="animation-delay:0.5s">Questions &amp; Discussion</div>
-      <div class="questions-divider anim" style="animation-delay:0.8s"></div>
-      <div class="questions-logos anim fade-in" style="animation-delay:1.2s">
-        <img loading="lazy" src="mpp-presentation-screenshots/dow-seal-crisp.png" alt="DoW Seal">
-        <img loading="lazy" src="mpp-presentation-screenshots/mpp-logo-crisp.png" alt="MPP Logo">
+  <!-- SLIDE 10: PILOT FEEDBACK & NEXT STEPS -->
+  <div class="slide slide-white" data-slide="10">
+    <div class="slide-header-bar">
+      <h2>Pilot Feedback &amp; Next Steps</h2>
+    </div>
+    <div class="nextsteps-body">
+      <div class="nextsteps-columns">
+        <div class="nextsteps-col anim fade-up" style="animation-delay:0.3s">
+          <div class="nextsteps-col-header">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="var(--gold)" stroke-width="2"/><path d="M9 14l3 3 7-7" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>What We Need From You</span>
+          </div>
+          <div class="nextsteps-items">
+            <div class="nextsteps-item">Identify 3&ndash;5 Program Managers for the pilot group</div>
+            <div class="nextsteps-item">Complete Module 1 walkthrough and provide structured feedback</div>
+            <div class="nextsteps-item">Confirm alignment with current PM onboarding workflows</div>
+          </div>
+        </div>
+        <div class="nextsteps-col anim fade-up" style="animation-delay:0.6s">
+          <div class="nextsteps-col-header">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="var(--gold)" stroke-width="2"/><path d="M14 8v8M10 12l4 4 4-4" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Our Next Actions</span>
+          </div>
+          <div class="nextsteps-items">
+            <div class="nextsteps-item">Incorporate PM review feedback across all 10 modules</div>
+            <div class="nextsteps-item">Deploy pilot to web-accessible platform for select participants</div>
+            <div class="nextsteps-item">Iterate based on pilot results and finalize for full deployment</div>
+          </div>
+        </div>
+        <div class="nextsteps-col anim fade-up" style="animation-delay:0.9s">
+          <div class="nextsteps-col-header">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="var(--gold)" stroke-width="2"/><path d="M14 9v6l4 2" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Timeline</span>
+          </div>
+          <div class="nextsteps-items">
+            <div class="nextsteps-item"><strong>Now:</strong> PM Review &amp; feedback collection</div>
+            <div class="nextsteps-item"><strong>Next:</strong> Pilot testing with select group</div>
+            <div class="nextsteps-item"><strong>Target:</strong> Full deployment to all Program Managers</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
