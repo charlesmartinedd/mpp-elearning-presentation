@@ -458,7 +458,49 @@
     margin-bottom:4px;
   }
 
-  /* === SLIDE 11: DEMO === */
+  /* === SLIDE 10: QUESTIONS === */
+  .slide-questions {
+    background: radial-gradient(ellipse at 50% 40%, rgba(197,165,90,0.06) 0%, transparent 60%),
+                linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+    flex-direction:column; text-align:center;
+  }
+  .questions-content {
+    display:flex; flex-direction:column; align-items:center;
+    gap:0; max-width:800px; padding:40px;
+  }
+  .questions-icon {
+    margin-bottom:24px;
+  }
+  .questions-title {
+    font-size:clamp(32px,4.5vw,54px); font-weight:700;
+    color:var(--white); letter-spacing:-0.5px;
+    margin-bottom:16px;
+  }
+  .questions-divider {
+    width:0; height:2px; background:var(--gold);
+    margin:0 auto 32px;
+  }
+  .slide.active .questions-divider { animation: drawWidth 0.8s 0.8s cubic-bezier(0.4,0,0.2,1) forwards; }
+  .questions-prompts {
+    display:flex; flex-direction:column; gap:16px;
+    margin-bottom:48px;
+  }
+  .questions-prompt {
+    font-size:clamp(16px,1.8vw,20px); color:rgba(255,255,255,0.75);
+    font-style:italic; line-height:1.5;
+    padding:12px 24px;
+    border-left:3px solid var(--gold);
+    text-align:left;
+  }
+  .questions-logos {
+    display:flex; gap:32px; align-items:center;
+  }
+  .questions-logos img {
+    height:60px; width:auto; object-fit:contain;
+    opacity:0.7;
+  }
+
+  /* === SLIDE 12: DEMO === */
   .slide-demo {
     background: var(--navy);
     padding:0;
@@ -819,13 +861,6 @@
           <div class="timeline-desc">Web-accessible platform for all program managers</div>
         </div>
       </div>
-      <div class="timeline-step anim fade-up" style="animation-delay:3.5s">
-        <div class="timeline-left"><div class="timeline-circle">9</div></div>
-        <div class="timeline-content">
-          <div class="timeline-title">Move America &amp; Feedback <span class="next-badge">NEXT STEPS</span></div>
-          <div class="timeline-desc">Standalone course adaptation and stakeholder feedback integration</div>
-        </div>
-      </div>
       </div>
       <div class="timeline-citations anim fade-in" style="animation-delay:3.5s">
         <div class="timeline-cite"><strong>ADDIE Model (Steps 1&ndash;5):</strong> Branch, R. M. (2009). <em>Instructional Design: The ADDIE Approach.</em> Springer. doi:10.1007/978-0-387-09506-6</div>
@@ -834,8 +869,31 @@
     </div>
   </div>
 
-  <!-- SLIDE 10: CLOSING -->
-  <div class="slide slide-closing" data-slide="10">
+  <!-- SLIDE 10: QUESTIONS & DISCUSSION -->
+  <div class="slide slide-questions" data-slide="10">
+    <div class="questions-content">
+      <div class="questions-icon anim fade-up" style="animation-delay:0.2s">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="30" stroke="var(--gold)" stroke-width="2" fill="none"/>
+          <text x="32" y="42" text-anchor="middle" font-size="36" font-weight="700" fill="var(--gold)">?</text>
+        </svg>
+      </div>
+      <div class="questions-title anim fade-up" style="animation-delay:0.5s">Questions &amp; Discussion</div>
+      <div class="questions-divider anim" style="animation-delay:0.8s"></div>
+      <div class="questions-prompts">
+        <div class="questions-prompt anim fade-up" style="animation-delay:1.0s">What aspects of the module structure would you like to explore further?</div>
+        <div class="questions-prompt anim fade-up" style="animation-delay:1.3s">How does this align with your team&rsquo;s current onboarding process?</div>
+        <div class="questions-prompt anim fade-up" style="animation-delay:1.6s">What feedback do you have on the review and pilot timeline?</div>
+      </div>
+      <div class="questions-logos anim fade-in" style="animation-delay:2.0s">
+        <img loading="lazy" src="mpp-presentation-screenshots/dow-seal-crisp.png" alt="DoW Seal">
+        <img loading="lazy" src="mpp-presentation-screenshots/mpp-logo-crisp.png" alt="MPP Logo">
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 11: CLOSING -->
+  <div class="slide slide-closing" data-slide="11">
     <div class="closing-title anim fade-up" style="animation-delay:0.3s">Let&rsquo;s Walk Through One Module</div>
     <div class="closing-divider"></div>
     <div class="closing-subtitle anim fade-in" style="animation-delay:1.0s">Live demonstration of the full eLearning experience</div>
@@ -845,8 +903,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 11: MODULE 1 LIVE DEMO -->
-  <div class="slide slide-demo" data-slide="11">
+  <!-- SLIDE 12: MODULE 1 LIVE DEMO -->
+  <div class="slide slide-demo" data-slide="12">
     <iframe class="demo-iframe" src="https://mpp.srv1158960.hstgr.cloud/modules/module-01/content/" allowfullscreen></iframe>
   </div>
 
@@ -854,7 +912,7 @@
 
 <script>
 (function(){
-  const totalSlides = 11;
+  const totalSlides = 12;
   let current = 1;
   let transitioning = false;
 
